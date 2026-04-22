@@ -1,0 +1,27 @@
+# The Security Constitution
+
+Security is the most common "weak point" in MERN resumes. By following these 5 Laws, you make your project professional-grade.
+
+## **Law 1: Identity & Access**
+
+* **JWT with Refresh Tokens:** Use short-lived Access Tokens (15 mins) and long-lived Refresh Tokens (stored in HTTP-only cookies on Web).
+* **Password Hashing:** Never store plain text. Use `bcrypt` with a salt factor of 12.
+
+## **Law 2: The "Owner-Only" Rule (Data Isolation)**
+
+* **Middleware Enforcement:** Every API route must use an `isOwner` middleware.
+* **Query Filtering:** Every MongoDB query **must** include `{ userId: req.user.id }` to prevent users from accessing each other's data (IDOR protection).
+
+## **Law 3: Input Sanitization**
+
+* **NoSQL Injection Protection:** Use `mongo-sanitize` to prevent malicious $ operators in login fields.
+* **XSS Protection:** Sanitize Markdown input in the Notes module to prevent `<script>` injection.
+
+## **Law 4: Secure Communication**
+
+* **CORS Policy:** Restrict the Backend to only accept requests from your specific Web and Mobile domains.
+* **Helmet.js:** Use the `helmet` middleware to set secure HTTP headers (HSTS, Content-Security-Policy).
+
+## **Law 5: Environment Integrity**
+
+* **Zero-Config Secrets:** Use `.env` files for `MONGO_URI` and `JWT_SECRET`. Never commit these to GitHub.
