@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../server.js';
+import app from '../server.js';
 
 describe('Server Basic Tests', () => {
   test('GET / should return NexusOS API Running', async () => {
