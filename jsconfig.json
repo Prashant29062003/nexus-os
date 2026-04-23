@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#core/*": ["backend/src/core/*"],
+      "#utils/*": ["backend/src/core/utils/*"],
+      "#controllers/*": ["backend/src/core/controllers/*"],
+      "#models/*": ["backend/src/core/models/*"],
+      "#modules/*": ["backend/src/modules/*"]
+    }
+  }
+}

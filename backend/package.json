@@ -4,6 +4,13 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "imports": {
+    "#core/*": "./src/core/*",
+    "#utils/*": "./src/core/utils/*",
+    "#controllers/*": "./src/core/controllers/*",
+    "#models/*": "./src/core/models/*",
+    "#modules/*": "./src/modules/*"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
@@ -30,7 +37,9 @@
     "mongoose": "^9.0.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
     "eslint": "^9.39.2",
+    "globals": "^16.5.0",
     "jest": "^30.3.0",
     "prettier": "^3.8.3",
     "supertest": "^7.2.2"
