@@ -1,10 +1,12 @@
-const asyncHandler = requestHandler => {
-    return async (req, res, next) => {
-        try {
-            await requestHandler(req, res, next);
-        } catch (err) {
-            console.log("Error: ", err.message);
-            next(err);
-        }
+const asyncHandler = (requestHandler) => {
+  return async (req, res, next) => {
+    try {
+      await requestHandler(req, res, next);
+    } catch (err) {
+      console.log('Error: ', err.message);
+      next(err);
     }
-}
+  };
+};
+
+export default asyncHandler;

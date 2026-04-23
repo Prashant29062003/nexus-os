@@ -1,0 +1,16 @@
+/**
+ * Custom API Error class for handling application errors
+ */
+class ApiError extends Error {
+  constructor(statusCode, message, errors = null) {
+    super(message);
+    this.statusCode = statusCode;
+    this.errors = errors;
+    this.success = false;
+    this.isOperational = true;
+
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
+
+export default ApiError;
